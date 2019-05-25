@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watchsass": "node-sass --output-style expanded css/style.scss css/output.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianaMota/danskspill-onboarding-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulianaMota/danskspill-onboarding-website/issues"
+  },
+  "homepage": "https://github.com/JulianaMota/danskspill-onboarding-website#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
