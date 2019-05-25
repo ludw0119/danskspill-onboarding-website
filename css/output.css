@@ -137,6 +137,7 @@ table {
 /**** global selectors *****/
 body {
   font-family: "Open Sans", sans-serif;
+  height: 100vh;
 }
 
 a {
@@ -148,7 +149,7 @@ header {
   background-color: #ae4a0c;
   display: grid;
   grid-template: 1fr / 15vw auto auto;
-  height: 50px;
+  height: 7%;
   font-size: 14px;
   font-weight: 600;
 }
@@ -200,4 +201,35 @@ header aside ul {
 
 header aside ul a {
   color: #fff;
+}
+
+/****main******/
+#main-signup {
+  background-image: url(../images/backgroundchez_2077x1202.png);
+  background-size: cover;
+  height: 93%;
+  color: #fff;
+  display: grid;
+  grid-template: auto 2fr / auto;
+}
+
+#main-signup div {
+  padding: 20px;
+}
+
+#main-signup div img {
+  width: 170px;
+}
+
+#main-signup div p {
+  font-size: 10px;
+}
+
+#main-signup article {
+  background-image: url(../images/10.png);
+  background-size: contain;
+  width: 70%;
+  height: 85%;
+  justify-self: center;
+  align-self: flex-start;
 }
