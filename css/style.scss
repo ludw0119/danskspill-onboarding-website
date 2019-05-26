@@ -130,6 +130,10 @@ table {
 
 /****** variables  ********/
 $font-stack: "Open Sans", sans-serif;
+$font-size-small: 10px;
+$font-size-text: 14px;
+$font-size-title: 20px;
+
 $color-bown: #ae4a0c;
 $color-white: #fff;
 $color-black: #000;
@@ -150,7 +154,7 @@ header {
   display: grid;
   grid-template: 1fr / 15vw auto auto;
   height: 7%;
-  font-size: 14px;
+  font-size: $font-size-text;
   font-weight: 600;
 
   img {
@@ -215,16 +219,58 @@ header {
       width: 170px;
     }
     p {
-      font-size: 10px;
+      font-size: $font-size-small;
     }
   }
 
-  article {
-    background-image: url(../images/10.png);
-    background-size: contain;
-    width: 70%;
-    height: 85%;
-    justify-self: center;
-    align-self: flex-start;
+  section {
+    display: grid;
+    grid-template: auto / auto;
+    overflow: hidden;
+    article {
+      background-image: url(../images/10.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 70%;
+      height: 75%;
+      justify-self: center;
+      align-self: flex-start;
+      padding: 30px;
+      h1 {
+        font-size: $font-size-title;
+        text-align: center;
+      }
+    }
+    #acount-choose {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      display: grid;
+      grid-template: repeat(6, 1fr) / 40%;
+      justify-content: center;
+      grid-row-gap: 5%;
+
+      .btn-face {
+        @extend .btn;
+        background-color: #3c5a99;
+      }
+      .btn-google {
+        @extend .btn;
+        background-color: #db4437;
+      }
+    }
+    #acount-form {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      transform: translate3d(150%, 0, 0);
+    }
   }
+}
+
+.btn {
+  color: $color-white;
+  border-radius: 4px;
+  border: none;
+  font-size: $font-size-text;
+  font-family: $font-stack;
+  // font-weight: 600;
 }

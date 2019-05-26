@@ -225,11 +225,55 @@ header aside ul a {
   font-size: 10px;
 }
 
-#main-signup article {
+#main-signup section {
+  display: grid;
+  grid-template: auto / auto;
+  overflow: hidden;
+}
+
+#main-signup section article {
   background-image: url(../images/10.png);
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 70%;
-  height: 85%;
+  height: 75%;
   justify-self: center;
   align-self: flex-start;
+  padding: 30px;
+}
+
+#main-signup section article h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+#main-signup section #acount-choose {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: grid;
+  grid-template: repeat(6, 1fr)/40%;
+  justify-content: center;
+  grid-row-gap: 5%;
+}
+
+#main-signup section #acount-choose .btn-face {
+  background-color: #3c5a99;
+}
+
+#main-signup section #acount-choose .btn-google {
+  background-color: #db4437;
+}
+
+#main-signup section #acount-form {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transform: translate3d(150%, 0, 0);
+}
+
+.btn, #main-signup section #acount-choose .btn-face, #main-signup section #acount-choose .btn-google {
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
 }
