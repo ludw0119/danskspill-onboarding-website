@@ -138,6 +138,7 @@ $color-bown: #ae4a0c;
 $color-white: #fff;
 $color-black: #000;
 $color-green: #47ab66;
+$color-orange: #da5713;
 
 /**** global selectors *****/
 body {
@@ -206,14 +207,14 @@ header {
 
 /****main******/
 #main-signup {
-  background-image: url(../images/backgroundchez_2077x1202.png);
+  background-image: url(../images/background.png);
   background-size: cover;
   height: 93%;
   color: $color-white;
   display: grid;
   grid-template: auto 2fr / auto;
 
-  div {
+  .logo-dantoto {
     padding: 20px;
     img {
       width: 170px;
@@ -227,12 +228,13 @@ header {
     display: grid;
     grid-template: auto / auto;
     overflow: hidden;
+
     article {
-      background-image: url(../images/10.png);
+      background-image: url(../images/horses-back.png);
       background-size: cover;
       background-repeat: no-repeat;
       width: 70%;
-      height: 75%;
+      height: 70%;
       justify-self: center;
       align-self: flex-start;
       padding: 30px;
@@ -245,24 +247,110 @@ header {
       grid-column: 1/2;
       grid-row: 1/2;
       display: grid;
-      grid-template: repeat(6, 1fr) / 40%;
+      grid-template: repeat(6, 1fr) / 35%;
       justify-content: center;
-      grid-row-gap: 5%;
 
       .btn-face {
         @extend .btn;
         background-color: #3c5a99;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 15%;
+        margin: 5% 0;
+        i {
+          font-size: 30px;
+        }
+        span {
+          align-self: center;
+        }
       }
       .btn-google {
         @extend .btn;
         background-color: #db4437;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 17%;
+        margin: 5% 0;
+        i {
+          font-size: 30px;
+        }
+        span {
+          align-self: center;
+        }
+      }
+      .btn-email {
+        @extend .btn;
+        background-color: $color-green;
+        margin: 5% 0;
+      }
+      div {
+        p {
+          font-size: $font-size-text;
+          font-style: italic;
+          text-align: center;
+          padding: 7% 0;
+        }
+        hr {
+          border-width: 1px;
+        }
+      }
+      p {
+        font-size: $font-size-text;
+        text-align: center;
+        a {
+          color: $color-white;
+          text-decoration: underline;
+        }
       }
     }
     #acount-form {
       grid-column: 1/2;
       grid-row: 1/2;
       transform: translate3d(150%, 0, 0);
+      display: grid;
+      grid-template: auto auto auto/1fr;
+
+      form {
+        display: grid;
+        grid-row-gap: 10%;
+        div {
+          display: grid;
+          grid-template: 1fr/1fr;
+          input {
+            grid-row: 1/2;
+            grid-column: 1/2;
+            background-color: transparent;
+            border: 1px solid $color-white;
+            height: 40px;
+            outline: none;
+          }
+          label {
+            grid-row: 1/2;
+            grid-column: 1/2;
+            align-self: center;
+            padding-left: 1%;
+            font-size: $font-size-text;
+          }
+        }
+      }
     }
+  }
+}
+
+.hide {
+  display: none !important;
+  transition: 3s;
+}
+
+.animateform {
+  animation: formAppear 1s ease-in-out forwards;
+}
+
+@keyframes formAppear {
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -272,5 +360,9 @@ header {
   border: none;
   font-size: $font-size-text;
   font-family: $font-stack;
-  // font-weight: 600;
+  height: 50px;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: $color-orange;
 }

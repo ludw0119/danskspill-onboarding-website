@@ -205,7 +205,7 @@ header aside ul a {
 
 /****main******/
 #main-signup {
-  background-image: url(../images/backgroundchez_2077x1202.png);
+  background-image: url(../images/background.png);
   background-size: cover;
   height: 93%;
   color: #fff;
@@ -213,15 +213,15 @@ header aside ul a {
   grid-template: auto 2fr / auto;
 }
 
-#main-signup div {
+#main-signup .logo-dantoto {
   padding: 20px;
 }
 
-#main-signup div img {
+#main-signup .logo-dantoto img {
   width: 170px;
 }
 
-#main-signup div p {
+#main-signup .logo-dantoto p {
   font-size: 10px;
 }
 
@@ -232,11 +232,11 @@ header aside ul a {
 }
 
 #main-signup section article {
-  background-image: url(../images/10.png);
+  background-image: url(../images/horses-back.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 70%;
-  height: 75%;
+  height: 70%;
   justify-self: center;
   align-self: flex-start;
   padding: 30px;
@@ -251,29 +251,130 @@ header aside ul a {
   grid-column: 1/2;
   grid-row: 1/2;
   display: grid;
-  grid-template: repeat(6, 1fr)/40%;
+  grid-template: repeat(6, 1fr)/35%;
   justify-content: center;
-  grid-row-gap: 5%;
 }
 
 #main-signup section #acount-choose .btn-face {
   background-color: #3c5a99;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 15%;
+  margin: 5% 0;
+}
+
+#main-signup section #acount-choose .btn-face i {
+  font-size: 30px;
+}
+
+#main-signup section #acount-choose .btn-face span {
+  align-self: center;
 }
 
 #main-signup section #acount-choose .btn-google {
   background-color: #db4437;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 17%;
+  margin: 5% 0;
+}
+
+#main-signup section #acount-choose .btn-google i {
+  font-size: 30px;
+}
+
+#main-signup section #acount-choose .btn-google span {
+  align-self: center;
+}
+
+#main-signup section #acount-choose .btn-email {
+  background-color: #47ab66;
+  margin: 5% 0;
+}
+
+#main-signup section #acount-choose div p {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  padding: 7% 0;
+}
+
+#main-signup section #acount-choose div hr {
+  border-width: 1px;
+}
+
+#main-signup section #acount-choose p {
+  font-size: 14px;
+  text-align: center;
+}
+
+#main-signup section #acount-choose p a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 #main-signup section #acount-form {
   grid-column: 1/2;
   grid-row: 1/2;
   transform: translate3d(150%, 0, 0);
+  display: grid;
+  grid-template: auto auto auto/1fr;
 }
 
-.btn, #main-signup section #acount-choose .btn-face, #main-signup section #acount-choose .btn-google {
+#main-signup section #acount-form form {
+  display: grid;
+  grid-row-gap: 10%;
+}
+
+#main-signup section #acount-form form div {
+  display: grid;
+  grid-template: 1fr/1fr;
+}
+
+#main-signup section #acount-form form div input {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  background-color: transparent;
+  border: 1px solid #fff;
+  height: 40px;
+  outline: none;
+}
+
+#main-signup section #acount-form form div label {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  align-self: center;
+  padding-left: 1%;
+  font-size: 14px;
+}
+
+.hide {
+  display: none !important;
+  transition: 3s;
+}
+
+.animateform {
+  animation: formAppear 1s ease-in-out forwards;
+}
+
+@keyframes formAppear {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btn, #main-signup section #acount-choose .btn-face, #main-signup section #acount-choose .btn-google, #main-signup section #acount-choose .btn-email {
   color: #fff;
   border-radius: 4px;
   border: none;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
+  height: 50px;
+}
+
+.btn:hover, #main-signup section #acount-choose .btn-face:hover, #main-signup section #acount-choose .btn-google:hover, #main-signup section #acount-choose .btn-email:hover {
+  cursor: pointer;
+  background-color: #da5713;
 }

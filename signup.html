@@ -53,7 +53,7 @@
       </aside>
     </header>
     <main id="main-signup">
-      <div>
+      <div class="logo-dantoto">
         <img src="images/dantoto-logo.png" alt="dantoto logo" />
         <p>Udbydes af Danske Licens Spil A/S</p>
       </div>
@@ -63,56 +63,60 @@
 
           <button class="btn-face">
             <i class="fab fa-facebook-square"></i>
-            Sign up with Facebook
+            <span>Sign up with Facebook</span>
           </button>
           <button class="btn-google">
             <i class="fab fa-google"></i>
-            Sign up with Google
+            <span>Sign up with Google</span>
           </button>
           <div>
             <hr />
             <p>- or -</p>
             <hr />
           </div>
-          <button>
-            Sign up with Email
+          <button class="btn-email">
+            <span>Sign up with Email</span>
           </button>
 
           <p>
-            By signing up, you agree to Dansk spill's Terms of Use and Privacy
-            Policy
+            By signing up, you agree to Dansk spill's
+            <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
           </p>
         </article>
         <article id="acount-form">
           <h1>Create Account</h1>
 
           <form action="">
-            <input
-              type="text"
-              placeholder="User Name"
-              name="username"
-              minlength="1"
-              required
-            />
-            <input type="email" placeholder="Email" name="email" required />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              required
-            />
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              name="password"
-              required
-            />
-            <input
-              type="submit"
-              value="Create your account"
-              name="submit"
-              required
-            />
+            <div>
+              <input
+                id="username"
+                type="text"
+                name="username"
+                minlength="1"
+                required
+              />
+              <label for="username">User Name</label>
+            </div>
+            <div>
+              <input id="email" type="email" name="email" required />
+              <label for="email">Email</label>
+            </div>
+            <div>
+              <input id="password" type="password" name="password" required />
+              <label for="password">Password</label>
+            </div>
+            <div>
+              <input id="pass-rep" type="password" name="password" required />
+              <label for="pass-rep">Repeat Password</label>
+            </div>
+            <div>
+              <input
+                type="submit"
+                value="Create your account"
+                name="submit"
+                required
+              />
+            </div>
           </form>
 
           <p>
@@ -122,5 +126,6 @@
         </article>
       </section>
     </main>
+    <script src="js/signup.js"></script>
   </body>
 </html>
