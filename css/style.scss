@@ -234,7 +234,7 @@ header {
       background-size: cover;
       background-repeat: no-repeat;
       width: 70%;
-      height: 70%;
+      min-height: 80%;
       justify-self: center;
       align-self: flex-start;
       padding: 30px;
@@ -247,17 +247,18 @@ header {
       grid-column: 1/2;
       grid-row: 1/2;
       display: grid;
-      grid-template: repeat(6, 1fr) / 35%;
+      grid-template: repeat(6, auto) / 35%;
       justify-content: center;
 
       .btn-face {
         @extend .btn;
         background-color: #3c5a99;
+        align-self: center;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 0 15%;
-        margin: 5% 0;
+        margin: 3% 0;
         i {
           font-size: 30px;
         }
@@ -268,11 +269,12 @@ header {
       .btn-google {
         @extend .btn;
         background-color: #db4437;
+        align-self: center;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 0 17%;
-        margin: 5% 0;
+        margin: 3% 0;
         i {
           font-size: 30px;
         }
@@ -282,8 +284,9 @@ header {
       }
       .btn-email {
         @extend .btn;
+        align-self: center;
         background-color: $color-green;
-        margin: 5% 0;
+        margin: 3% 0;
       }
       div {
         p {
@@ -299,6 +302,7 @@ header {
       p {
         font-size: $font-size-text;
         text-align: center;
+        line-height: 1.5;
         a {
           color: $color-white;
           text-decoration: underline;
@@ -310,38 +314,83 @@ header {
       grid-row: 1/2;
       transform: translate3d(150%, 0, 0);
       display: grid;
-      grid-template: auto auto auto/1fr;
+      grid-template: auto 1fr auto/ 300px;
+      justify-content: center;
+
+      h1 {
+        padding-bottom: 12%;
+      }
+
+      p {
+        // margin-top: 5%;
+        font-size: $font-size-text;
+        text-align: center;
+        line-height: 1.5;
+        a {
+          color: $color-white;
+          text-decoration: underline;
+        }
+      }
 
       form {
         display: grid;
         grid-row-gap: 10%;
         div {
           display: grid;
-          grid-template: 1fr/1fr;
+          grid-template: auto/auto;
+          height: 150%;
+
           input {
             grid-row: 1/2;
             grid-column: 1/2;
             background-color: transparent;
             border: 1px solid $color-white;
-            height: 40px;
             outline: none;
+            font-size: $font-size-text;
+            color: $color-white;
+            padding: 0 5%;
+            border-radius: 4px;
           }
+          input:valid {
+            border: 1px solid $color-green;
+          }
+          // input:invalid {
+          //   border: 1px solid $color-orange;
+          // }
+          input:focus + label {
+            color: $color-orange !important;
+          }
+
           label {
             grid-row: 1/2;
             grid-column: 1/2;
             align-self: center;
-            padding-left: 1%;
+            padding-left: 5%;
             font-size: $font-size-text;
+          }
+          .sub-btn {
+            @extend .btn;
+            background-color: $color-green;
+            margin-top: 7%;
           }
         }
       }
     }
   }
 }
+.move-lable {
+  animation: moveLable 0.5s ease-in-out forwards;
+}
 
-.hide {
-  display: none !important;
-  transition: 3s;
+@keyframes moveLable {
+  100% {
+    transform: translate(-3rem, -0.8rem) scale(0.7);
+    // color: gainsboro;
+  }
+}
+
+.hideChosse {
+  animation: chosseDisapear 1s ease-in-out forwards;
 }
 
 .animateform {
@@ -351,6 +400,12 @@ header {
 @keyframes formAppear {
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes chosseDisapear {
+  100% {
+    transform: translate3d(-150%, 0, 0);
   }
 }
 

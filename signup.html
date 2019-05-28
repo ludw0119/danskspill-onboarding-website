@@ -86,9 +86,10 @@
         <article id="acount-form">
           <h1>Create Account</h1>
 
-          <form action="">
+          <form>
             <div>
               <input
+                class="inputLabel"
                 id="username"
                 type="text"
                 name="username"
@@ -98,19 +99,38 @@
               <label for="username">User Name</label>
             </div>
             <div>
-              <input id="email" type="email" name="email" required />
+              <input
+                class="inputLabel"
+                id="email"
+                type="email"
+                name="email"
+                required
+              />
               <label for="email">Email</label>
             </div>
             <div>
-              <input id="password" type="password" name="password" required />
+              <input
+                class="inputLabel"
+                id="password"
+                type="password"
+                name="password"
+                required
+              />
               <label for="password">Password</label>
             </div>
             <div>
-              <input id="pass-rep" type="password" name="password" required />
+              <input
+                class="inputLabel"
+                id="pass-rep"
+                type="password"
+                name="password"
+                required
+              />
               <label for="pass-rep">Repeat Password</label>
             </div>
             <div>
               <input
+                class="sub-btn"
                 type="submit"
                 value="Create your account"
                 name="submit"
@@ -118,11 +138,12 @@
               />
             </div>
           </form>
-
-          <p>
-            By signing up, you agree to Dansk spill's Terms of Use and Privacy
-            Policy
-          </p>
+          <div>
+            <p>
+              By signing up, you agree to Dansk spill's
+              <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+            </p>
+          </div>
         </article>
       </section>
     </main>
