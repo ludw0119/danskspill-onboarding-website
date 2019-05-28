@@ -203,7 +203,7 @@ header aside ul a {
   color: #fff;
 }
 
-/****main******/
+/********main******/
 #main-signup {
   background-image: url(../images/background.png);
   background-size: cover;
@@ -211,6 +211,8 @@ header aside ul a {
   color: #fff;
   display: grid;
   grid-template: auto 2fr / auto;
+  /********logo******/
+  /********section of arcticles******/
 }
 
 #main-signup .logo-dantoto {
@@ -229,6 +231,8 @@ header aside ul a {
   display: grid;
   grid-template: auto / auto;
   overflow: hidden;
+  /********article acount choose******/
+  /********article acount form******/
 }
 
 #main-signup section article {
@@ -348,6 +352,34 @@ header aside ul a {
   grid-row-gap: 10%;
 }
 
+#main-signup section #acount-form form #username-div div {
+  top: 3%;
+  left: 20%;
+  height: 25%;
+  width: 20%;
+}
+
+#main-signup section #acount-form form #email-div div {
+  top: 12%;
+  left: 50%;
+  height: 25%;
+  width: 20%;
+}
+
+#main-signup section #acount-form form #pass-div div {
+  top: 25%;
+  left: 20%;
+  height: 30%;
+  width: 20%;
+}
+
+#main-signup section #acount-form form #rep-pass-div div {
+  top: 40%;
+  left: 50%;
+  height: 30%;
+  width: 20%;
+}
+
 #main-signup section #acount-form form div {
   display: grid;
   grid-template: auto/auto;
@@ -372,6 +404,7 @@ header aside ul a {
 
 #main-signup section #acount-form form div input:focus + label {
   color: #da5713 !important;
+  animation: moveLable 0.5s ease-in-out forwards;
 }
 
 #main-signup section #acount-form form div label {
@@ -387,6 +420,7 @@ header aside ul a {
   margin-top: 7%;
 }
 
+/*******animation**********/
 .move-lable {
   animation: moveLable 0.5s ease-in-out forwards;
 }
@@ -415,6 +449,16 @@ header aside ul a {
   100% {
     transform: translate3d(-150%, 0, 0);
   }
+}
+
+/*******extend classes**********/
+.infodiv, #main-signup section #acount-form form #username-div div, #main-signup section #acount-form form #email-div div, #main-signup section #acount-form form #pass-div div, #main-signup section #acount-form form #rep-pass-div div {
+  background-color: #da5713;
+  font-size: 12px;
+  line-height: 1.3;
+  position: absolute;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 75% 50%, 75% 60%, 50% 50%, 0% 50%);
+  padding: 10px;
 }
 
 .btn, #main-signup section #acount-choose .btn-face, #main-signup section #acount-choose .btn-google, #main-signup section #acount-choose .btn-email, #main-signup section #acount-form form div .sub-btn {

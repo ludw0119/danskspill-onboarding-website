@@ -87,18 +87,22 @@
           <h1>Create Account</h1>
 
           <form>
-            <div>
+            <div id="username-div">
               <input
                 class="inputLabel"
                 id="username"
                 type="text"
                 name="username"
-                minlength="1"
+                pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
                 required
               />
               <label for="username">User Name</label>
+              <div>
+                Choose a username from 2 to 20 characters, without special
+                characters.
+              </div>
             </div>
-            <div>
+            <div id="email-div">
               <input
                 class="inputLabel"
                 id="email"
@@ -107,26 +111,39 @@
                 required
               />
               <label for="email">Email</label>
+              <div>
+                Your email is required. e.g. name@email.x
+              </div>
             </div>
-            <div>
+            <div id="pass-div">
               <input
                 class="inputLabel"
                 id="password"
                 type="password"
                 name="password"
+                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                 required
               />
               <label for="password">Password</label>
+              <div>
+                Your password should be 8 Chars minimum with UpperCase,
+                LowerCase and Number or SpecialChar.
+              </div>
             </div>
-            <div>
+            <div id="rep-pass-div">
               <input
                 class="inputLabel"
                 id="pass-rep"
                 type="password"
-                name="password"
+                name="repassword"
+                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                 required
               />
               <label for="pass-rep">Repeat Password</label>
+              <div>
+                Your password should be 8 Chars minimum with UpperCase,
+                LowerCase and Number or SpecialChar.
+              </div>
             </div>
             <div>
               <input

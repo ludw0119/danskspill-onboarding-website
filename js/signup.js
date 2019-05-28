@@ -1,14 +1,26 @@
 "use strict";
+const form = document.querySelector("form");
+const userMessage = document.querySelector("#username-div div");
+const emailMessage = document.querySelector("#email-div div");
+const passMessage = document.querySelector("#pass-div div");
+const repassMessage = document.querySelector("#rep-pass-div div");
 
 window.addEventListener("DOMContentLoaded", init);
 
+//funtion init to call event listeners
 function init() {
+  emailMessage.style.display = "none";
+  userMessage.style.display = "none";
+  passMessage.style.display = "none";
+  repassMessage.style.display = "none";
+
   document.querySelector(".btn-email").addEventListener("click", signupCliked);
   const inputs = document.querySelectorAll(".inputLabel");
   console.log(inputs);
   inputs.forEach(oneInput => oneInput.addEventListener("click", animatelable));
 }
 
+//change sign up choice to the sign up form
 function signupCliked() {
   const form = document.querySelector("#acount-form");
   console.log(form);
@@ -17,6 +29,7 @@ function signupCliked() {
   acountChoice.classList.add("hideChosse");
 }
 
+// Make lable comes up when input cliked
 function animatelable(e) {
   console.log(e.target.id);
   console.log(e.toElement.nextElementSibling.htmlFor);
@@ -25,3 +38,53 @@ function animatelable(e) {
     e.toElement.nextElementSibling.classList.add("move-lable");
   }
 }
+
+// Form validity messages appear
+form.elements.username.addEventListener("blur", e => {
+  if (form.elements.username.checkValidity()) {
+    userMessage.style.display = "none";
+  } else {
+    userMessage.style.display = "block";
+    setTimeout(function() {
+      userMessage.style.display = "none";
+    }, 10000);
+  }
+});
+
+form.elements.email.addEventListener("blur", e => {
+  if (form.elements.email.checkValidity()) {
+    emailMessage.style.display = "none";
+  } else {
+    emailMessage.style.display = "block";
+    setTimeout(function() {
+      emailMessage.style.display = "none";
+    }, 10000);
+  }
+});
+
+form.elements.password.addEventListener("blur", e => {
+  if (form.elements.password.checkValidity()) {
+    passMessage.style.display = "none";
+  } else {
+    passMessage.style.display = "block";
+    setTimeout(function() {
+      passMessage.style.display = "none";
+    }, 10000);
+  }
+});
+
+form.elements.repassword.addEventListener("blur", e => {
+  if (form.elements.repassword.checkValidity()) {
+    passMessage.style.display = "none";
+  } else {
+    repassMessage.style.display = "block";
+    setTimeout(function() {
+      repassMessage.style.display = "none";
+    }, 10000);
+  }
+});
+
+// const passinput = document.querySelector("#password");
+// passinput.addEventListener("")
+
+// add content to database
