@@ -84,7 +84,43 @@ form.elements.repassword.addEventListener("blur", e => {
   }
 });
 
-// const passinput = document.querySelector("#password");
-// passinput.addEventListener("")
+const password = document.querySelector("#password");
+const repassword = document.querySelector("#pass-rep");
+
+function validatePassword() {
+  console.log(password.value, repassword.value);
+  if (password.value != repassword.value) {
+    repassword.setCustomValidity("Passwords Don't Match");
+  } else {
+    repassword.setCustomValidity("");
+  }
+}
+
+password.onchange = validatePassword;
+repassword.onkeyup = validatePassword;
 
 // add content to database
+form.addEventListener("submit", e => {
+  form.elements.submit.disabled = true;
+  console.log(e);
+  e.preventDefault();
+  const obj = {
+    Username: form.elements.username.value,
+    Email: form.elements.email.value
+  };
+  console.log(obj);
+  post(obj);
+});
+
+function post(obj) {
+  fetch("", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "",
+      "cache-control": "no-cache"
+    },
+    body: JSON.stringify(obj)
+  }).then(res => res.json());
+  // .then(data => displayTasks(data));
+}
