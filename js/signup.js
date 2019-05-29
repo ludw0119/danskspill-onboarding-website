@@ -4,6 +4,8 @@ const userMessage = document.querySelector("#username-div div");
 const emailMessage = document.querySelector("#email-div div");
 const passMessage = document.querySelector("#pass-div div");
 const repassMessage = document.querySelector("#rep-pass-div div");
+const password = document.querySelector("#password");
+const repassword = document.querySelector("#pass-rep");
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -40,6 +42,8 @@ function animatelable(e) {
 }
 
 // Form validity messages appear
+
+//USERNAME
 form.elements.username.addEventListener("blur", e => {
   if (form.elements.username.checkValidity()) {
     userMessage.style.display = "none";
@@ -47,10 +51,11 @@ form.elements.username.addEventListener("blur", e => {
     userMessage.style.display = "block";
     setTimeout(function() {
       userMessage.style.display = "none";
-    }, 10000);
+    }, 8000);
   }
 });
 
+//EMAIL
 form.elements.email.addEventListener("blur", e => {
   if (form.elements.email.checkValidity()) {
     emailMessage.style.display = "none";
@@ -58,10 +63,11 @@ form.elements.email.addEventListener("blur", e => {
     emailMessage.style.display = "block";
     setTimeout(function() {
       emailMessage.style.display = "none";
-    }, 10000);
+    }, 8000);
   }
 });
 
+//PASSWORD
 form.elements.password.addEventListener("blur", e => {
   if (form.elements.password.checkValidity()) {
     passMessage.style.display = "none";
@@ -69,10 +75,11 @@ form.elements.password.addEventListener("blur", e => {
     passMessage.style.display = "block";
     setTimeout(function() {
       passMessage.style.display = "none";
-    }, 10000);
+    }, 8000);
   }
 });
 
+//CONFIRM PASSWORD
 form.elements.repassword.addEventListener("blur", e => {
   if (form.elements.repassword.checkValidity()) {
     passMessage.style.display = "none";
@@ -80,13 +87,11 @@ form.elements.repassword.addEventListener("blur", e => {
     repassMessage.style.display = "block";
     setTimeout(function() {
       repassMessage.style.display = "none";
-    }, 10000);
+    }, 8000);
   }
 });
 
-const password = document.querySelector("#password");
-const repassword = document.querySelector("#pass-rep");
-
+// PASSWORD MATH
 function validatePassword() {
   console.log(password.value, repassword.value);
   if (password.value != repassword.value) {
@@ -95,7 +100,6 @@ function validatePassword() {
     repassword.setCustomValidity("");
   }
 }
-
 password.onchange = validatePassword;
 repassword.onkeyup = validatePassword;
 

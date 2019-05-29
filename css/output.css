@@ -361,7 +361,7 @@ header aside ul a {
 
 #main-signup section #acount-form form #email-div div {
   top: 12%;
-  left: 50%;
+  left: 47%;
   height: 25%;
   width: 20%;
 }
@@ -375,7 +375,7 @@ header aside ul a {
 
 #main-signup section #acount-form form #rep-pass-div div {
   top: 40%;
-  left: 50%;
+  left: 47%;
   height: 30%;
   width: 20%;
 }
@@ -468,6 +468,7 @@ header aside ul a {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
   height: 50px;
+  outline: none;
 }
 
 .btn:hover, #main-signup section #acount-choose .btn-face:hover, #main-signup section #acount-choose .btn-google:hover, #main-signup section #acount-choose .btn-email:hover, #main-signup section #acount-form form div .sub-btn:hover {
