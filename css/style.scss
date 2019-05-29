@@ -164,6 +164,12 @@ header {
     align-self: center;
     justify-self: center;
   }
+  .burger-menu {
+    display: none;
+  }
+  .mobile-logos {
+    display: none;
+  }
 
   nav {
     align-self: center;
@@ -475,4 +481,77 @@ header {
 .btn:hover {
   cursor: pointer;
   background-color: $color-orange;
+}
+
+@media only screen and (max-width: 700px) {
+  /*********header************/
+  header {
+    background-color: $color-bown;
+    display: grid;
+    grid-template: 1fr / 70px auto 20vw;
+    height: 7%;
+    font-size: $font-size-text;
+    font-weight: 600;
+
+    img {
+      display: none;
+    }
+    .burger-menu {
+      display: grid;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      align-content: center;
+      justify-content: center;
+      grid-row-gap: 6px;
+      width: 70px;
+      div {
+        width: 30px;
+        height: 3px;
+        background-color: $color-white;
+      }
+    }
+
+    .mobile-logos {
+      display: grid;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      grid-template: auto / auto auto;
+      grid-column-gap: 10px;
+      .icon-danskspill {
+        display: block;
+        width: 25px;
+        box-sizing: border-box;
+        justify-self: flex-end;
+      }
+      .logo-dantoto-header {
+        display: block;
+        width: 120px;
+        box-sizing: border-box;
+        justify-self: flex-start;
+      }
+    }
+
+    nav {
+      display: none;
+    }
+    aside {
+      grid-row: 1/2;
+      grid-column: 3/4;
+      justify-self: right;
+      width: 20vw;
+
+      ul {
+        #createA-aside {
+          display: none;
+        }
+        #list-aside {
+          display: none;
+        }
+        a {
+          color: $color-white;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
