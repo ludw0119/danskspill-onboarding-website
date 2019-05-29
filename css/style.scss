@@ -252,7 +252,7 @@ header {
       }
     }
 
-    /********article acount choose******/
+    /********article account choose******/
     #acount-choose {
       grid-column: 1/2;
       grid-row: 1/2;
@@ -320,7 +320,7 @@ header {
       }
     }
 
-    /********article acount form******/
+    /********article account form******/
     #acount-form {
       grid-column: 1/2;
       grid-row: 1/2;
@@ -420,6 +420,8 @@ header {
         }
       }
     }
+
+    /********article account complete******/
     #account-created {
       grid-column: 1/2;
       grid-row: 1/2;
@@ -463,6 +465,28 @@ header {
 }
 
 /*******animation**********/
+// .invalidInput {
+//   animation: shakeInput 2s ease-in-out forwards;
+// }
+// @keyframes shakeInput {
+//   5% {
+//     transform: translate3d(0.5%, 0, 0);
+//   }
+//   10% {
+//     transform: translate3d(-0.5%, 0, 0);
+//   }
+//   15% {
+//     transform: translate3d(0.5%, 0, 0);
+//   }
+//   20% {
+//     transform: translate3d(0, 0, 0);
+//   }
+//   100% {
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
+
+//move lable up animation
 .move-lable {
   animation: moveLable 0.5s ease-in-out forwards;
 }
@@ -473,6 +497,7 @@ header {
   }
 }
 
+//translate articales animation
 .hideArticle {
   animation: articleDisapearAnim 1s ease-in-out forwards !important;
 }
@@ -494,6 +519,7 @@ header {
 }
 
 /*******extend classes**********/
+//message general class
 .infodiv {
   background-color: $color-orange;
   font-size: 12px;
@@ -510,6 +536,7 @@ header {
   );
   padding: 10px;
 }
+//button general task
 .btn {
   color: $color-white;
   border-radius: 4px;
@@ -525,7 +552,7 @@ header {
 }
 
 @media only screen and (max-width: 700px) {
-  /*********header************/
+  /*********header mobile************/
   header {
     background-color: $color-bown;
     display: grid;
@@ -595,6 +622,8 @@ header {
       }
     }
   }
+
+  /***main mobile***/
   #main-signup {
     section {
       display: grid;
@@ -616,7 +645,7 @@ header {
         }
       }
 
-      /********article acount choose******/
+      /********article account choose******/
       #acount-choose {
         grid-column: 1/2;
         grid-row: 1/2;
@@ -624,7 +653,7 @@ header {
         grid-template: repeat(6, auto) / 90%;
         justify-content: center;
       }
-
+      /********article account form******/
       #acount-form {
         form {
           #username-div div {
@@ -655,6 +684,7 @@ header {
           }
         }
       }
+      /********article account complete******/
       #account-created {
         grid-column: 1/2;
         grid-row: 1/2;
