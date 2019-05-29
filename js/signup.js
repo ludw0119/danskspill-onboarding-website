@@ -26,9 +26,9 @@ function init() {
 function signupCliked() {
   const form = document.querySelector("#acount-form");
   console.log(form);
-  form.classList.add("animateform");
+  form.classList.add("appearArticle");
   const acountChoice = document.querySelector("#acount-choose");
-  acountChoice.classList.add("hideChosse");
+  acountChoice.classList.add("hideArticle");
 }
 
 // Make lable comes up when input cliked
@@ -43,7 +43,7 @@ function animatelable(e) {
 
 // Form validity messages appear
 
-//USERNAME
+//USERNAME MESSAGE
 form.elements.username.addEventListener("blur", e => {
   if (form.elements.username.checkValidity()) {
     userMessage.style.display = "none";
@@ -55,7 +55,7 @@ form.elements.username.addEventListener("blur", e => {
   }
 });
 
-//EMAIL
+//EMAIL MESSAGE
 form.elements.email.addEventListener("blur", e => {
   if (form.elements.email.checkValidity()) {
     emailMessage.style.display = "none";
@@ -67,7 +67,7 @@ form.elements.email.addEventListener("blur", e => {
   }
 });
 
-//PASSWORD
+//PASSWORD MESSAGE
 form.elements.password.addEventListener("blur", e => {
   if (form.elements.password.checkValidity()) {
     passMessage.style.display = "none";
@@ -93,7 +93,7 @@ form.elements.repassword.addEventListener("blur", e => {
 
 // PASSWORD MATH
 function validatePassword() {
-  console.log(password.value, repassword.value);
+  // console.log(password.value, repassword.value);
   if (password.value != repassword.value) {
     repassword.setCustomValidity("Passwords Don't Match");
   } else {
@@ -113,18 +113,35 @@ form.addEventListener("submit", e => {
     Email: form.elements.email.value
   };
   console.log(obj);
-  post(obj);
+  // post(obj);
 });
 
-function post(obj) {
-  fetch("", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "",
-      "cache-control": "no-cache"
-    },
-    body: JSON.stringify(obj)
-  }).then(res => res.json());
-  // .then(data => displayTasks(data));
-}
+//Change html content for account created
+form.elements.submit.addEventListener("click", e => {
+  // if (
+  //   form.elements.repassword.checkValidity() &&
+  //   form.elements.password.checkValidity() &&
+  //   form.elements.email.checkValidity() &&
+  //   form.elements.username.checkValidity()
+  // ) {
+  const acountComplete = document.querySelector("#account-created");
+  acountComplete.classList.add("appearArticle");
+  const form = document.querySelector("#acount-form");
+  form.classList.add("hideArticle");
+  // } else {
+  // }
+  console.log(form.elements);
+});
+
+// function post(obj) {
+//   fetch("", {
+//     method: "post",
+//     headers: {
+//       "Content-Type": "application/json; charset=utf-8",
+//       "x-apikey": "",
+//       "cache-control": "no-cache"
+//     },
+//     body: JSON.stringify(obj)
+//   }).then(res => res.json());
+//   // .then(data => displayTasks(data));
+// }
