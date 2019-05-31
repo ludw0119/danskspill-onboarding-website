@@ -211,6 +211,19 @@ header aside ul a {
   color: #fff;
 }
 
+/********logo******/
+.logo-dantoto {
+  padding: 20px;
+}
+
+.logo-dantoto img {
+  width: 170px;
+}
+
+.logo-dantoto p {
+  font-size: 10px;
+}
+
 /********main******/
 #main-signup {
   background-image: url(../images/background.png);
@@ -219,20 +232,7 @@ header aside ul a {
   color: #fff;
   display: grid;
   grid-template: auto 2fr / auto;
-  /********logo******/
   /********section of arcticles******/
-}
-
-#main-signup .logo-dantoto {
-  padding: 20px;
-}
-
-#main-signup .logo-dantoto img {
-  width: 170px;
-}
-
-#main-signup .logo-dantoto p {
-  font-size: 10px;
 }
 
 #main-signup section {
@@ -482,6 +482,12 @@ header aside ul a {
 .btn:hover, #main-signup section #acount-choose .btn-face:hover, #main-signup section #acount-choose .btn-google:hover, #main-signup section #acount-choose .btn-email:hover, #main-signup section #acount-form form div .sub-btn:hover {
   cursor: pointer;
   background-color: #da5713;
+}
+
+/*********Main ONBOARDING PAGE*************************************/
+/****arrow svg class****/
+.arrow {
+  fill: #000;
 }
 
 @media only screen and (max-width: 700px) {
