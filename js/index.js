@@ -22,6 +22,18 @@ function dotEvent() {
   dots[1].addEventListener("click", dot => {
     currenSlide(2);
   });
+  dots[2].addEventListener("click", dot => {
+    currenSlide(3);
+  });
+  dots[3].addEventListener("click", dot => {
+    currenSlide(4);
+  });
+  dots[4].addEventListener("click", dot => {
+    currenSlide(5);
+  });
+  dots[5].addEventListener("click", dot => {
+    currenSlide(6);
+  });
 }
 function currenSlide(index) {
   showSlides((slideIndex = index));
@@ -56,9 +68,10 @@ function showSlides(index) {
   }
   for (counter = 0; counter < dotArray.length; counter++) {
     dotArray[counter].className = dotArray[counter].className.replace(
-      "current",
+      " current",
       ""
     );
   }
   slideArray[slideIndex - 1].style.display = "block";
+  dotArray[slideIndex - 1].className += " current";
 }
