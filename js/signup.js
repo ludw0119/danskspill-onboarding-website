@@ -103,19 +103,6 @@ function validatePassword() {
 password.onchange = validatePassword;
 repassword.onkeyup = validatePassword;
 
-// add content to database
-form.addEventListener("submit", e => {
-  form.elements.submit.disabled = true;
-  console.log(e);
-  e.preventDefault();
-  const obj = {
-    Username: form.elements.username.value,
-    Email: form.elements.email.value
-  };
-  console.log(obj);
-  // post(obj);
-});
-
 //Change html content for account created
 form.elements.submit.addEventListener("click", e => {
   if (
@@ -133,15 +120,29 @@ form.elements.submit.addEventListener("click", e => {
   }
 });
 
-// function post(obj) {
-//   fetch("", {
-//     method: "post",
-//     headers: {
-//       "Content-Type": "application/json; charset=utf-8",
-//       "x-apikey": "",
-//       "cache-control": "no-cache"
-//     },
-//     body: JSON.stringify(obj)
-//   }).then(res => res.json());
-//   // .then(data => displayTasks(data));
-// }
+// add content to database
+form.addEventListener("submit", e => {
+  form.elements.submit.disabled = true;
+  console.log(e);
+  e.preventDefault();
+  const obj = {
+    Username: form.elements.username.value,
+    Email: form.elements.email.value
+  };
+  console.log(obj);
+  post(obj);
+});
+
+function post(obj) {
+  fetch("https://dantoto-eb44.restdb.io/rest/dantoto-users", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5ce6c77b780a473c8df5cb6d",
+      "cache-control": "no-cache"
+    },
+    body: JSON.stringify(obj)
+  })
+    .then(res => res.json())
+    .then(data => displayUsers(data));
+}
