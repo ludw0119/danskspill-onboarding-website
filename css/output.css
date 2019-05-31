@@ -222,6 +222,7 @@ header aside ul a {
 
 .logo-dantoto p {
   font-size: 10px;
+  color: #fff;
 }
 
 /********main******/
@@ -490,7 +491,55 @@ header aside ul a {
   fill: #000;
 }
 
-@media only screen and (max-width: 700px) {
+.slides {
+  display: none;
+}
+
+#main-onboarding section {
+  display: grid;
+}
+
+#main-onboarding section .slideshow-container {
+  width: 100%;
+  position: relative;
+}
+
+#main-onboarding section .slideshow-container .arrowSize {
+  width: 30px;
+}
+
+#main-onboarding section .slideshow-container .prev,
+#main-onboarding section .slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+}
+
+#main-onboarding section .slideshow-container .next {
+  right: 0;
+}
+
+#main-onboarding section section {
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.current,
+.dot:hover {
+  background-color: #000;
+}
+
+@media only all and (max-width: 700px) {
   /*********header************/
   header {
     background-color: #ae4a0c;
