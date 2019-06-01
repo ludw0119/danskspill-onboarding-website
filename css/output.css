@@ -211,6 +211,20 @@ header aside ul a {
   color: #fff;
 }
 
+/********logo******/
+.logo-dantoto {
+  padding: 20px;
+}
+
+.logo-dantoto img {
+  width: 170px;
+}
+
+.logo-dantoto p {
+  font-size: 10px;
+  color: #fff;
+}
+
 /********main******/
 #main-signup {
   background-image: url(../images/background.png);
@@ -219,20 +233,7 @@ header aside ul a {
   color: #fff;
   display: grid;
   grid-template: auto 2fr / auto;
-  /********logo******/
   /********section of arcticles******/
-}
-
-#main-signup .logo-dantoto {
-  padding: 20px;
-}
-
-#main-signup .logo-dantoto img {
-  width: 170px;
-}
-
-#main-signup .logo-dantoto p {
-  font-size: 10px;
 }
 
 #main-signup section {
@@ -530,8 +531,104 @@ header aside ul a {
   background-color: #da5713;
 }
 
-@media only screen and (max-width: 700px) {
-  /*********header mobile************/
+/*********Main ONBOARDING PAGE*************************************/
+/****arrow svg class****/
+.arrow {
+  fill: #fff;
+}
+
+.slides {
+  display: none;
+  transform: translate3d(250%, 0, 0);
+  opacity: 0;
+}
+
+#main-onboarding {
+  background-image: url(../images/background-1.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#main-onboarding #modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#main-onboarding #modal .slideshow-container {
+  width: 100%;
+  position: relative;
+}
+
+#main-onboarding #modal .slideshow-container article {
+  margin: auto;
+}
+
+#main-onboarding #modal .slideshow-container article div {
+  background-color: #fff;
+}
+
+#main-onboarding #modal .slideshow-container .arrowSize {
+  width: 30px;
+}
+
+#main-onboarding #modal .slideshow-container .prev,
+#main-onboarding #modal .slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+}
+
+#main-onboarding #modal .slideshow-container .next {
+  right: 0;
+}
+
+#main-onboarding #modal section {
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+/*******dot class**********/
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.current,
+.dot:hover {
+  background-color: #000;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: move;
+  animation-duration: 2.5s;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translate3d(200%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media only all and (max-width: 700px) {
+  /*********header************/
   header {
     background-color: #ae4a0c;
     display: grid;
