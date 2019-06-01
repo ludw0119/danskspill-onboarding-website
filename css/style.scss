@@ -488,23 +488,39 @@ header {
 
 /****arrow svg class****/
 .arrow {
-  fill: #000;
+  fill: $color-white;
 }
 
 .slides {
   display: none;
+  transform: translate3d(250%, 0, 0);
+  opacity: 0;
 }
 
 #main-onboarding {
-  // background image
+  background-image: url(../images/background-1.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
 
-  section {
+  #modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
     display: grid;
+    background-color: rgba(0, 0, 0, 0.7);
 
-    // black
     .slideshow-container {
       width: 100%;
       position: relative;
+
+      article {
+        margin: auto;
+        div {
+          background-color: $color-white;
+        }
+      }
       .arrowSize {
         width: 30px;
       }
@@ -526,6 +542,7 @@ header {
     }
   }
 }
+/*******dot class**********/
 .dot {
   cursor: pointer;
   height: 15px;
@@ -537,6 +554,25 @@ header {
 .current,
 .dot:hover {
   background-color: #000;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: move;
+  animation-duration: 2.5s;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translate3d(200%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @media only all and (max-width: 700px) {
