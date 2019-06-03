@@ -139,7 +139,7 @@ function post(obj) {
       "cache-control": "no-cache"
     },
     body: JSON.stringify(obj)
-  })
-    .then(res => res.json())
-    .then(data => displayUsers(data));
+  });
+  //.then(res => res.json())
+  //.then(data);
 }
