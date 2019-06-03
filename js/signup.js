@@ -19,7 +19,7 @@ function init() {
   document.querySelector(".btn-email").addEventListener("click", signupCliked);
   const inputs = document.querySelectorAll(".inputLabel");
   console.log(inputs);
-  inputs.forEach(oneInput => oneInput.addEventListener("click", animatelable));
+  inputs.forEach(oneInput => oneInput.addEventListener("focus", animatelable));
 }
 
 //change sign up choice to the sign up form
@@ -33,12 +33,9 @@ function signupCliked() {
 
 // Make lable comes up when input cliked
 function animatelable(e) {
-  console.log(e.target.id);
-  console.log(e.toElement.nextElementSibling.htmlFor);
+  console.log(e);
 
-  if (e.target.id === e.toElement.nextElementSibling.htmlFor) {
-    e.toElement.nextElementSibling.classList.add("move-lable");
-  }
+  e.target.nextElementSibling.classList.add("move-lable");
 }
 
 // Form validity messages appear

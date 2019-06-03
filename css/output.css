@@ -415,7 +415,6 @@ header aside ul a {
 
 #main-signup section #acount-form form div input:focus + label {
   color: #da5713 !important;
-  animation: moveLable 0.5s ease-in-out forwards;
 }
 
 #main-signup section #acount-form form div label {
