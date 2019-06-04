@@ -145,7 +145,10 @@ function displayDeactivated(deactivatedList) {
     //console.log(clone);
 
     if (user.photo != null) {
-      if (user.photo === "https://dantoto-eb44.restdb.io/media/") {
+      if (
+        user.photo === "https://dantoto-eb44.restdb.io/media/" ||
+        user.photo === "https://dantoto-eb44.restdb.io/media/undefined"
+      ) {
         clone.querySelector(".photoTable").src = "../images/noPhoto.png";
       } else {
         clone.querySelector(".photoTable").src = user.photo;
@@ -282,8 +285,15 @@ function showModal(id) {
       let telephone = document.querySelector("#Telephone");
       let address = document.querySelector("#Address");
       let button = document.querySelector("#deactivateButton");
-      console.log(data);
-      photo.src = "https://dantoto-eb44.restdb.io/media/" + data.Photo;
+      console.log(data.Photo);
+
+      if (data.Photo === undefined || data.Photo.length === 0) {
+        photo.src = "../images/noPhoto.png";
+      } else {
+        photo.src = "https://dantoto-eb44.restdb.io/media/" + data.Photo;
+      }
+
+      //photo.src = "https://dantoto-eb44.restdb.io/media/" + data.Photo;
       username.textContent = data.Username;
       fullname.textContent = data.Fullname;
       email.textContent = data.Email;
