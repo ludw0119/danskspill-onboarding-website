@@ -68,9 +68,12 @@ function displayUsers(arrayOfUsers) {
     const clone = template1.cloneNode(true);
     const clone2 = template2.cloneNode(true);
     //console.log(clone);
-    //console.log(clone2);
+    console.log(user.photo);
 
-    if (user.photo === "https://dantoto-eb44.restdb.io/media/") {
+    if (
+      user.photo === "https://dantoto-eb44.restdb.io/media/" ||
+      user.photo === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
       clone.querySelector(".photoTable").src = "../images/noPhoto.png";
     } else {
       clone.querySelector(".photoTable").src = user.photo;
