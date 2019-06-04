@@ -419,6 +419,9 @@ header {
             background-color: $color-green;
             margin-top: 7%;
           }
+          .sub-btn:valid {
+            border: transparent;
+          }
         }
       }
     }
