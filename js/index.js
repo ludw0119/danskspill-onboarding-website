@@ -65,7 +65,7 @@ function showSlides(index) {
 
   //slide array
   const slideArray = document.querySelectorAll(".slides");
-  // console.log(slideArray);
+  //console.log(slideArray);
 
   // dot array
   const dotArray = document.querySelectorAll(".dot");

@@ -133,6 +133,7 @@ $font-stack: "Open Sans", sans-serif;
 $font-size-small: 10px;
 $font-size-text: 14px;
 $font-size-title: 20px;
+$font-size-title-big: 30px;
 
 $color-bown: #ae4a0c;
 $color-white: #fff;
@@ -576,6 +577,7 @@ header {
     height: 100%;
     width: 100%;
     display: grid;
+    grid-template: auto 3fr 1fr /1fr;
     background-color: rgba(0, 0, 0, 0.7);
 
     .slideshow-container {
@@ -584,8 +586,27 @@ header {
 
       article {
         margin: auto;
+
+        h1 {
+          color: $color-white;
+          font-weight: bolder;
+          font-style: italic;
+          font-size: $font-size-title-big;
+          letter-spacing: 2px;
+          padding-bottom: 20px;
+          text-align: center;
+        }
+
         div {
-          background-color: $color-white;
+          background-color: rgba(255, 255, 255, 0.8);
+          min-height: 50vh;
+          width: 30vw;
+          border-radius: 5px;
+          display: grid;
+
+          img {
+            height: 80px;
+          }
         }
       }
       .arrowSize {

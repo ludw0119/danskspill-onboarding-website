@@ -555,6 +555,7 @@ header aside ul a {
   height: 100%;
   width: 100%;
   display: grid;
+  grid-template: auto 3fr 1fr /1fr;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -567,8 +568,26 @@ header aside ul a {
   margin: auto;
 }
 
+#main-onboarding #modal .slideshow-container article h1 {
+  color: #fff;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 30px;
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
 #main-onboarding #modal .slideshow-container article div {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 50vh;
+  width: 30vw;
+  border-radius: 5px;
+  display: grid;
+}
+
+#main-onboarding #modal .slideshow-container article div img {
+  height: 80px;
 }
 
 #main-onboarding #modal .slideshow-container .arrowSize {
