@@ -86,12 +86,12 @@ function showSlides(index) {
       ""
     );
   }
-
-  //add display block based on index
-  slideArray[slideIndex - 1].style.display = "block";
-  //add current class based on index
-  dotArray[slideIndex - 1].className += " current";
-
+  if (slideArray[slideIndex - 1]) {
+    //add display block based on index
+    slideArray[slideIndex - 1].style.display = "block";
+    //add current class based on index
+    dotArray[slideIndex - 1].className += " current";
+  }
   //change arrow at begining
   if (slideIndex === 1) {
     document.querySelector(".prev").style.visibility = "hidden";
@@ -101,7 +101,12 @@ function showSlides(index) {
 
   //change arrow at end
   if (slideIndex === 6) {
+    console.log("ae");
     document.querySelector(".next").addEventListener("click", lastClick);
+    document.querySelector(".next").removeEventListener("click", goNext);
+  } else {
+    document.querySelector(".next").removeEventListener("click", lastClick);
+    document.querySelector(".next").addEventListener("click", goNext);
   }
 }
 
