@@ -400,12 +400,12 @@ header aside ul a {
   grid-row: 1/2;
   grid-column: 1/2;
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   outline: none;
   font-size: 14px;
   color: #fff;
   padding: 0 5%;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: text;
 }
 
@@ -517,7 +517,7 @@ header aside ul a {
 
 .btn, #main-signup section #acount-choose .btn-face, #main-signup section #acount-choose .btn-google, #main-signup section #acount-choose .btn-email, #main-signup section #acount-form form div .sub-btn, #main-signup section #account-created a, #main-onboarding #modal .slideshow-container article div button {
   color: #fff;
-  border-radius: 4px;
+  border-radius: 5px;
   border: none;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
@@ -534,6 +534,7 @@ header aside ul a {
 /****arrow svg class****/
 .arrow {
   fill: #fff;
+  transition: fill 0.6s ease;
 }
 
 .slides {
@@ -544,6 +545,7 @@ header aside ul a {
 
 #main-onboarding {
   background-image: url(../images/background-1.png);
+  background-position: center;
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -585,17 +587,17 @@ header aside ul a {
   border-radius: 5px;
   display: grid;
   padding: 20px;
-  grid-template: 1fr 7vh auto 2fr / auto;
+  grid-template: 1fr auto auto 2fr / auto;
 }
 
 #main-onboarding #modal .slideshow-container article div img {
   padding: 20px 0;
-  height: 80px;
+  width: 100px;
   justify-self: center;
 }
 
 #main-onboarding #modal .slideshow-container article div .pointsSlide-img {
-  height: 100px;
+  width: 250px;
 }
 
 #main-onboarding #modal .slideshow-container article div h2 {
@@ -605,6 +607,7 @@ header aside ul a {
   font-weight: 600;
   font-size: 22px;
   font-variant: small-caps;
+  padding-bottom: 2vh;
 }
 
 #main-onboarding #modal .slideshow-container article div .pointsSlide-h2 {
@@ -615,6 +618,7 @@ header aside ul a {
   align-items: center;
   justify-self: center;
   padding: 15px;
+  border-radius: 5px;
 }
 
 #main-onboarding #modal .slideshow-container article div .pointsSlide-h2 span {
@@ -639,6 +643,15 @@ header aside ul a {
   padding: 10px;
 }
 
+#main-onboarding #modal .slideshow-container article div .pointsSlide-p {
+  color: #fff;
+  text-shadow: 3px 3px 4px #000000;
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
 #main-onboarding #modal .slideshow-container article div button {
   background-color: #da5713;
   height: 35px;
@@ -646,6 +659,23 @@ header aside ul a {
   font-size: 14px;
   justify-self: center;
   align-self: flex-end;
+}
+
+#main-onboarding #modal .slideshow-container article div a {
+  background-color: #47ab66;
+  padding: 15px;
+  justify-self: center;
+  align-self: flex-end;
+  width: 60%;
+  text-align: center;
+  height: 14px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+#main-onboarding #modal .slideshow-container article div a:hover {
+  background-color: #da5713;
 }
 
 #main-onboarding #modal .slideshow-container .arrowSize {
@@ -660,7 +690,16 @@ header aside ul a {
 }
 
 #main-onboarding #modal .slideshow-container .next {
-  right: 0;
+  right: 20%;
+}
+
+#main-onboarding #modal .slideshow-container .prev {
+  left: 20%;
+}
+
+#main-onboarding #modal .slideshow-container .next:hover .arrow,
+#main-onboarding #modal .slideshow-container .prev:hover .arrow {
+  fill: #47ab66;
 }
 
 #main-onboarding #modal section {
@@ -705,7 +744,7 @@ header aside ul a {
   }
 }
 
-@media only all and (max-width: 700px) {
+@media only all and (max-width: 800px) {
   /*********header************/
   header {
     background-color: #ae4a0c;
@@ -749,7 +788,7 @@ header aside ul a {
     display: block;
     width: 120px;
     box-sizing: border-box;
-    justify-self: flex-start;
+    justify-self: center;
   }
   header nav {
     display: none;
@@ -783,7 +822,7 @@ header aside ul a {
     background-image: url(../images/horses-back.png);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 70%;
+    width: 65%;
     min-height: 80%;
     justify-self: center;
     align-self: flex-start;
@@ -830,5 +869,43 @@ header aside ul a {
     display: grid;
     grid-template: repeat(4, auto)/90%;
     justify-content: center;
+  }
+  /********main onboarding mobile******/
+  #main-onboarding #modal {
+    padding-top: 8vh;
+    grid-template: auto 4fr 1fr /1fr;
+    /********logo******/
+  }
+  #main-onboarding #modal .logo-dantoto {
+    display: none;
+  }
+  #main-onboarding #modal .slideshow-container article h1 {
+    font-size: 25px;
+  }
+  #main-onboarding #modal .slideshow-container article div {
+    height: 55vh;
+    width: 60vw;
+  }
+  #main-onboarding #modal .slideshow-container article div .pointsSlide-img {
+    width: 200px;
+  }
+  #main-onboarding #modal .slideshow-container article div h2 {
+    font-size: 20px;
+  }
+  #main-onboarding #modal .slideshow-container article div p {
+    width: 80%;
+    line-height: 1.4;
+  }
+  #main-onboarding #modal .slideshow-container .arrowSize {
+    width: 20px;
+  }
+  #main-onboarding #modal .slideshow-container .next {
+    right: 3%;
+  }
+  #main-onboarding #modal .slideshow-container .prev {
+    left: 3%;
+  }
+  #main-onboarding #modal section {
+    width: 60%;
   }
 }
