@@ -141,5 +141,5 @@ function post(obj) {
     body: JSON.stringify(obj)
   })
     .then(res => res.json())
-    .then(data => displayUsers(data));
+    .then(data => {});
 }
