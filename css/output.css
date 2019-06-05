@@ -584,6 +584,17 @@ header aside ul a {
   text-align: center;
 }
 
+#main-onboarding #modal .slideshow-container article .gameSize {
+  width: 70vw;
+  background-color: transparent;
+}
+
+#main-onboarding #modal .slideshow-container article .gameSize svg {
+  width: 100%;
+  height: 50vh;
+  box-sizing: border-box;
+}
+
 #main-onboarding #modal .slideshow-container article div {
   background-color: rgba(255, 255, 255, 0.8);
   height: 50vh;
@@ -695,10 +706,22 @@ header aside ul a {
 
 #main-onboarding #modal .slideshow-container .next {
   right: 20%;
+  transition: 0.3s;
+}
+
+#main-onboarding #modal .slideshow-container .nextgame {
+  right: 15%;
+  transition: 0.3s;
 }
 
 #main-onboarding #modal .slideshow-container .prev {
   left: 20%;
+  transition: 0.3s;
+}
+
+#main-onboarding #modal .slideshow-container .prevgame {
+  left: 15%;
+  transition: 0.3s;
 }
 
 #main-onboarding #modal .slideshow-container .next:hover .arrow,

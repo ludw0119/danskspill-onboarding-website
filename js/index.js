@@ -92,11 +92,23 @@ function showSlides(index) {
     //add current class based on index
     dotArray[slideIndex - 1].className += " current";
   }
+
+  const nextArrow = document.querySelector(".next");
+  const prevArrow = document.querySelector(".prev");
   //change arrow at begining
   if (slideIndex === 1) {
-    document.querySelector(".prev").style.visibility = "hidden";
+    prevArrow.style.visibility = "hidden";
   } else {
-    document.querySelector(".prev").style.visibility = "visible";
+    prevArrow.style.visibility = "visible";
+  }
+
+  //arrow move in game slide
+  if (slideIndex === 5) {
+    nextArrow.classList.add("nextgame");
+    prevArrow.classList.add("prevgame");
+  } else {
+    nextArrow.classList.remove("nextgame");
+    prevArrow.classList.remove("prevgame");
   }
 
   //change arrow at end
