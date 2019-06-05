@@ -5,9 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/game.css" />
+
     <title>DANTOTO Onboarding Page</title>
   </head>
   <body>
+    <audio id="whooshSound0" preload="auto">
+      <source src="audio/Whoosh sound effect.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="whooshSound1">
+      <source src="audio/Whoosh sound effect.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="whooshSound2">
+      <source src="audio/Whoosh sound effect.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="whooshSound3">
+      <source src="audio/Whoosh sound effect.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="raceSound">
+      <source src="audio/Belmont Stakes.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="mouseClick">
+      <source src="audio/MouseClick1.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="Bell1">
+      <source src="audio/bell.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="Bell2">
+      <source src="audio/bell.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="Bell3">
+      <source src="audio/bell.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="Bell4">
+      <source src="audio/bell.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="Bell5">
+      <source src="audio/bell.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="sucess">
+      <source src="audio/SUCCESS.wav" type="audio/mpeg" />
+    </audio>
+
     <header>
       <!-- Desktop Logo -->
       <img src="images/dss___hr.svg" alt="dansk stpil logo" />
@@ -138,17 +177,22 @@
 
           <article class="slides fade">
             <h1>LET'S WARM UP</h1>
-            <div>
-              GAME
-            </div>
+            <div id="gameBox"></div>
           </article>
 
           <article class="slides fade">
             <h1>CONGRATS!</h1>
             <div>
-              <img class="pointsSlide-img" src="images/cup.png" alt="Cup image" />
-              <h2 class="pointsSlide-h2">YOU WON <span>30</span> POINTS</h2>
+              <img
+                class="pointsSlide-img"
+                src="images/cup.png"
+                alt="Cup image"
+              />
+              <h2 id="youWonPlaceholder" class="pointsSlide-h2">
+                YOU WON <span id="pointsPlaceholder">30</span> POINTS
+              </h2>
               <p class="pointsSlide-p">Save your points</p>
+
               <a href="signup.html">CREATE ACCOUNT</a>
             </div>
           </article>
@@ -196,5 +240,8 @@
       </section>
     </main>
     <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="js/CustomEase.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
