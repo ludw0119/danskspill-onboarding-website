@@ -77,7 +77,7 @@ form.elements.password.addEventListener("blur", e => {
   }
 });
 
-//CONFIRM PASSWORD
+//CONFIRM PASSWORD MESSAGE
 form.elements.repassword.addEventListener("blur", e => {
   if (form.elements.repassword.checkValidity()) {
     passMessage.style.display = "none";
@@ -89,7 +89,7 @@ form.elements.repassword.addEventListener("blur", e => {
   }
 });
 
-// To create the match password function I have used this reference ced form codepen by Diego Leme
+// To create the match password function I have used this reference code form codepen by Diego Leme
 //https://codepen.io/diegoleme/pen/surIK
 // PASSWORD MATH
 function validatePassword() {
@@ -101,7 +101,7 @@ function validatePassword() {
   }
 }
 
-//Change html content for account created
+//Change html content for account complete
 form.elements.submit.addEventListener("click", e => {
   if (
     form.elements.repassword.checkValidity() &&
@@ -118,7 +118,7 @@ form.elements.submit.addEventListener("click", e => {
   }
 });
 
-// add content to database
+// create object with form data
 form.addEventListener("submit", e => {
   form.elements.submit.disabled = true;
   console.log(e);
@@ -131,6 +131,7 @@ form.addEventListener("submit", e => {
   post(obj);
 });
 
+//post object on database
 function post(obj) {
   fetch("https://dantoto-eb44.restdb.io/rest/dantoto-users", {
     method: "post",
