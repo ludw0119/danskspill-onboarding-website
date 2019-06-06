@@ -30,7 +30,9 @@ function loadSVG() {
       console.log(document.querySelector("#pointsText").textContent);
       if (document.querySelector("#pointsText").textContent == 0) {
         document.querySelector("#youWonPlaceholder").innerHTML =
-          "Are you sure you don't want to play";
+          "Are you sure you don't want to play?";
+        document.querySelector("#savePoint").innerHTML =
+          "If you play you can win points for the real betting";
       }
     });
 }
