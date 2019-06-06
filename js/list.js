@@ -74,7 +74,7 @@ function displayUsers(arrayOfUsers) {
       user.photo === "https://dantoto-eb44.restdb.io/media/" ||
       user.photo === "https://dantoto-eb44.restdb.io/media/undefined"
     ) {
-      clone.querySelector(".photoTable").src = "../images/noPhoto.png";
+      clone.querySelector(".photoTable").src = "./images/noPhoto.png";
     } else {
       clone.querySelector(".photoTable").src = user.photo;
     }
