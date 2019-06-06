@@ -442,6 +442,75 @@ ifDeleteDiv h4 {
 
 /*---------------------------mobile version--------------------------------------*/
 @media all and (max-width: 700px) {
+  /*********header************/
+  header {
+    background-color: #ae4a0c;
+    display: grid;
+    grid-template: 1fr / 60px auto 20vw;
+    height: 7%;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  header img {
+    display: none;
+  }
+  header .burger-menu {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-content: center;
+    justify-content: center;
+    grid-row-gap: 6px;
+    width: 70px;
+  }
+  header .burger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+  }
+  header .mobile-logos {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    grid-template: auto / auto auto;
+    grid-column-gap: 10px;
+  }
+  header .mobile-logos .icon-danskspill {
+    display: block;
+    width: 25px;
+    box-sizing: border-box;
+    justify-self: flex-end;
+  }
+  header .mobile-logos .logo-dantoto-header {
+    display: block;
+    width: 120px;
+    box-sizing: border-box;
+    justify-self: center;
+  }
+  header nav {
+    display: none;
+  }
+  header aside {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    justify-self: right;
+    width: 20vw;
+  }
+  header aside ul {
+    padding: 0;
+    padding-inline-start: unset;
+  }
+  header aside ul #createA-aside {
+    display: none;
+  }
+  header aside ul #list-aside {
+    display: none;
+  }
+  header aside ul a {
+    color: #fff;
+    text-transform: uppercase;
+  }
+
   #logoDantoto {
     width: 28vw;
   }

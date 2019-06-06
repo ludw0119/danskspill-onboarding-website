@@ -14,12 +14,13 @@ function init() {
   emailMessage.style.display = "none";
   userMessage.style.display = "none";
   passMessage.style.display = "none";
-  repassMessage.style.display = "none";
 
   document.querySelector(".btn-email").addEventListener("click", signupCliked);
   const inputs = document.querySelectorAll(".inputLabel");
   console.log(inputs);
   inputs.forEach(oneInput => oneInput.addEventListener("focus", animatelable));
+  password.onchange = validatePassword;
+  repassword.onkeyup = validatePassword;
 }
 
 //change sign up choice to the sign up form
@@ -48,7 +49,7 @@ form.elements.username.addEventListener("blur", e => {
     userMessage.style.display = "block";
     setTimeout(function() {
       userMessage.style.display = "none";
-    }, 8000);
+    }, 6000);
   }
 });
 
@@ -60,7 +61,7 @@ form.elements.email.addEventListener("blur", e => {
     emailMessage.style.display = "block";
     setTimeout(function() {
       emailMessage.style.display = "none";
-    }, 8000);
+    }, 6000);
   }
 });
 
@@ -72,7 +73,7 @@ form.elements.password.addEventListener("blur", e => {
     passMessage.style.display = "block";
     setTimeout(function() {
       passMessage.style.display = "none";
-    }, 8000);
+    }, 6000);
   }
 });
 
@@ -81,10 +82,10 @@ form.elements.repassword.addEventListener("blur", e => {
   if (form.elements.repassword.checkValidity()) {
     passMessage.style.display = "none";
   } else {
-    repassMessage.style.display = "block";
+    passMessage.style.display = "block";
     setTimeout(function() {
-      repassMessage.style.display = "none";
-    }, 8000);
+      passMessage.style.display = "none";
+    }, 6000);
   }
 });
 
@@ -97,8 +98,6 @@ function validatePassword() {
     repassword.setCustomValidity("");
   }
 }
-password.onchange = validatePassword;
-repassword.onkeyup = validatePassword;
 
 //Change html content for account created
 form.elements.submit.addEventListener("click", e => {
