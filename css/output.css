@@ -543,7 +543,6 @@ header aside ul a {
 
 .slides {
   display: none;
-  transform: translate3d(250%, 0, 0);
   opacity: 0;
 }
 
@@ -582,6 +581,17 @@ header aside ul a {
   letter-spacing: 2px;
   padding-bottom: 20px;
   text-align: center;
+}
+
+#main-onboarding #modal .slideshow-container article .gameSize {
+  width: 70vw;
+  background-color: transparent;
+}
+
+#main-onboarding #modal .slideshow-container article .gameSize svg {
+  width: 100%;
+  height: 50vh;
+  box-sizing: border-box;
 }
 
 #main-onboarding #modal .slideshow-container article div {
@@ -695,10 +705,22 @@ header aside ul a {
 
 #main-onboarding #modal .slideshow-container .next {
   right: 20%;
+  transition: 0.3s;
+}
+
+#main-onboarding #modal .slideshow-container .nextgame {
+  right: 15%;
+  transition: 0.3s;
 }
 
 #main-onboarding #modal .slideshow-container .prev {
   left: 20%;
+  transition: 0.3s;
+}
+
+#main-onboarding #modal .slideshow-container .prevgame {
+  left: 15%;
+  transition: 0.3s;
 }
 
 #main-onboarding #modal .slideshow-container .next:hover .arrow,
@@ -732,19 +754,16 @@ header aside ul a {
 /* Fading animation */
 .fade {
   animation-name: move;
-  animation-duration: 2.5s;
-  animation-delay: 0.7s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes move {
   from {
     opacity: 0;
-    transform: translate3d(200%, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
 }
 
