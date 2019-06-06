@@ -587,6 +587,6 @@ ifDeleteDiv h4 {
   .removeButton {
     height: 20px;
     width: 20px;
-    cursor: url(images/cursor.png), auto;
+    cursor: pointer;
   }
 }
