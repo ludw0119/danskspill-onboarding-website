@@ -133,9 +133,6 @@ function hideWarning(id) {
 /*---------------------------------------------------------------displaying table 2 content - with object-----------------------------------------------------------------*/
 
 function displayDeactivated(deactivatedList) {
-  /*document.querySelectorAll(".tableRow").forEach(item => {
-    item.remove(); //the rows need to deleted before displaying users, because otherwise they are duplicated if the function is called 2 or more times in the code
-  });*/
   deactivatedList.forEach(user => {
     const template = document.querySelector("#template1").content;
     const clone = template.cloneNode(true);
@@ -175,49 +172,6 @@ function displayDeactivated(deactivatedList) {
     document.querySelector("#table2Wrapper").classList.add("invisible");
   }
 }
-
-/*---------------------------------------------------------------displaying table 1 content - without object-----------------------------------------------------------------*/
-/*function get() {
-  fetch("https://dantoto-eb44.restdb.io/rest/dantoto-users", {
-    method: "get",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "5ce6c77b780a473c8df5cb6d",
-      "cache-control": "no-cache"
-    }
-  })
-    .then(res => res.json())
-    .then(data => {
-      data.forEach(showInput);
-      //console.log(data);
-    });
-}*/
-
-/*function showInput(user) {
-  const template = document.querySelector("template").content;
-  const clone = template.cloneNode(true);
-  clone.querySelector(".photoTable").src =
-    "https://dantoto-eb44.restdb.io/media/" + user.Photo;
-  clone.querySelector(".name").textContent = user.Username;
-  clone.querySelector(".wins").textContent = user.Wins;
-  clone.querySelector(".looses").textContent = user.Looses;
-  clone.querySelector(".rating").textContent = user.Rating;
-  clone.querySelector(".removeButton").id = "removeButton" + user._id;
-
-  clone.querySelector(".removeButton").addEventListener("click", e => {
-    e.target.parentElement.parentElement.remove();
-    deleteTask(user._id); //wywołanie funkcji "detete task"
-    //console.log(task._id);
-  });
-  let rows = clone.querySelectorAll(".row");
-  rows.forEach(row => {
-    row.addEventListener("click", e => {
-      showModal(user._id);
-    });
-  });
-
-  document.querySelector("table").appendChild(clone);
-}*/
 
 /*---------------------------------------------------------------deleting from database-----------------------------------------------------------------*/
 
@@ -309,6 +263,3 @@ function deactivateUser(id) {
   displayDeactivated(deactivatedList);
   hideModal();
 }
-
-//let deleteBtn = document.querySelector("#deleteButton");
-//  deleteBtn.addEventListener("click", deleteTask(user.id));
