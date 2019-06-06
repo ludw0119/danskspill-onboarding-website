@@ -38,9 +38,6 @@ function loadSVG() {
 // --------------------------------------- animate list of horses ----------------------------------
 
 function animationFallingBoxes() {
-  let whooshSound = document.querySelectorAll(
-    "#whooshSound0, #whooshSound1, #whooshSound2, #whooshSound3"
-  );
 
   document.querySelector("#playButton").addEventListener("click", () => {
     document.querySelector("#youWonPlaceholder").innerHTML =
@@ -51,6 +48,9 @@ function animationFallingBoxes() {
       scale: 0.5
     });
 
+    let whooshSound = document.querySelectorAll(
+      "#whooshSound0, #whooshSound1, #whooshSound2, #whooshSound3"
+    );
     let boxesWithHorses = document.querySelectorAll(
       "#horse1, #horse2, #horse3, #horse4"
     );

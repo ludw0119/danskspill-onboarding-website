@@ -546,7 +546,6 @@ header {
 
 .slides {
   display: none;
-  transform: translate3d(250%, 0, 0);
   opacity: 0;
 }
 
@@ -742,22 +741,18 @@ header {
 /* Fading animation */
 .fade {
   animation-name: move;
-  animation-duration: 2.5s;
-  animation-delay: 0.7s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes move {
   from {
     opacity: 0;
-    transform: translate3d(200%, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
 }
-
 @media only all and (max-width: 800px) {
   /*********header************/
   header {
@@ -925,6 +920,7 @@ header {
           div {
             height: 55vh;
             width: 60vw;
+            $width: 60vw;
 
             .pointsSlide-img {
               width: 200px;

@@ -48,23 +48,29 @@ function currenSlide(index) {
 function plus(index) {
   showSlides((slideIndex += index));
 }
-
+let counterSlides = 0;
 //activate plus funtion for arrow right
 function goNext() {
   plus(1);
+  counterSlides++;
+  slideArray[counterSlides - 1].classList.add("fadeOut");
+
+  // console.log(counterSlides);
 }
 
 //activate plus funtion for arrow left
 function goPrev() {
   plus(-1);
+
+  counterSlides = counterSlides - 1;
+  console.log(counterSlides);
 }
+//slide array
+const slideArray = document.querySelectorAll(".slides");
 
 //funtion to creat slide show counter and display
 function showSlides(index) {
   let counter;
-
-  //slide array
-  const slideArray = document.querySelectorAll(".slides");
   //console.log(slideArray);
 
   // dot array
@@ -89,6 +95,7 @@ function showSlides(index) {
   if (slideArray[slideIndex - 1]) {
     //add display block based on index
     slideArray[slideIndex - 1].style.display = "block";
+    slideArray[slideIndex - 1].classList.remove("fadeOut");
     //add current class based on index
     dotArray[slideIndex - 1].className += " current";
   }
