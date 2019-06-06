@@ -146,7 +146,7 @@ function displayDeactivated(deactivatedList) {
         user.photo === "https://dantoto-eb44.restdb.io/media/" ||
         user.photo === "https://dantoto-eb44.restdb.io/media/undefined"
       ) {
-        clone.querySelector(".photoTable").src = "../images/noPhoto.png";
+        clone.querySelector(".photoTable").src = "./images/noPhoto.png";
       } else {
         clone.querySelector(".photoTable").src = user.photo;
       }
@@ -242,7 +242,7 @@ function showModal(id) {
       console.log(data.Photo);
 
       if (data.Photo === undefined || data.Photo.length === 0) {
-        photo.src = "../images/noPhoto.png";
+        photo.src = "./images/noPhoto.png";
       } else {
         photo.src = "https://dantoto-eb44.restdb.io/media/" + data.Photo;
       }
