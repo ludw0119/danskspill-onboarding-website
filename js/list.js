@@ -68,7 +68,7 @@ function displayUsers(arrayOfUsers) {
     const clone = template1.cloneNode(true);
     const clone2 = template2.cloneNode(true);
     //console.log(clone);
-    console.log(user.photo);
+    //console.log(user.photo);
 
     if (
       user.photo === "https://dantoto-eb44.restdb.io/media/" ||
@@ -79,9 +79,35 @@ function displayUsers(arrayOfUsers) {
       clone.querySelector(".photoTable").src = user.photo;
     }
     clone.querySelector(".name").textContent = user.username;
-    clone.querySelector(".wins").textContent = user.wins;
-    clone.querySelector(".looses").textContent = user.looses;
-    clone.querySelector(".rating").textContent = user.rating;
+
+    //console.log(user.wins);
+    if (
+      user.wins === undefined ||
+      user.wins === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
+      clone.querySelector(".wins").textContent = "0";
+    } else {
+      clone.querySelector(".wins").textContent = user.wins;
+    }
+
+    if (
+      user.looses === undefined ||
+      user.looses === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
+      clone.querySelector(".looses").textContent = "0";
+    } else {
+      clone.querySelector(".looses").textContent = user.looses;
+    }
+
+    if (
+      user.rating === undefined ||
+      user.rating === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
+      clone.querySelector(".rating").textContent = "0";
+    } else {
+      clone.querySelector(".rating").textContent = user.rating;
+    }
+
     let removeButtonId = "removeButton" + user.id;
     clone.querySelector(".removeButton").id = removeButtonId;
     removeButtonObject = clone.querySelector(".removeButton");
@@ -152,10 +178,34 @@ function displayDeactivated(deactivatedList) {
       }
     }
 
+    if (
+      user.wins === undefined ||
+      user.wins === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
+      clone.querySelector(".wins").textContent = "0";
+    } else {
+      clone.querySelector(".wins").textContent = user.wins;
+    }
+
+    if (
+      user.looses === undefined ||
+      user.looses === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
+      clone.querySelector(".looses").textContent = "0";
+    } else {
+      clone.querySelector(".looses").textContent = user.looses;
+    }
+
+    if (
+      user.rating === undefined ||
+      user.rating === "https://dantoto-eb44.restdb.io/media/undefined"
+    ) {
+      clone.querySelector(".rating").textContent = "0";
+    } else {
+      clone.querySelector(".rating").textContent = user.rating;
+    }
+
     clone.querySelector(".name").textContent = user.username;
-    clone.querySelector(".wins").textContent = user.wins;
-    clone.querySelector(".looses").textContent = user.looses;
-    clone.querySelector(".rating").textContent = user.rating;
     //clone.querySelector(".removeButton").id = "removeButton" + user.id;
     let removeButtonId = "removeButton" + user.id;
     clone.querySelector(".removeButton").id = removeButtonId;
@@ -239,7 +289,7 @@ function showModal(id) {
       let telephone = document.querySelector("#Telephone");
       let address = document.querySelector("#Address");
       let button = document.querySelector("#deactivateButton");
-      console.log(data.Photo);
+      //console.log(data.Photo);
 
       if (data.Photo === undefined || data.Photo.length === 0) {
         photo.src = "./images/noPhoto.png";
@@ -247,12 +297,27 @@ function showModal(id) {
         photo.src = "https://dantoto-eb44.restdb.io/media/" + data.Photo;
       }
 
-      //photo.src = "https://dantoto-eb44.restdb.io/media/" + data.Photo;
+      if (data.Fullname === undefined) {
+        fullname.textContent = ".....";
+      } else {
+        fullname.textContent = data.Fullname;
+      }
+
+      if (data.Telephone === undefined) {
+        telephone.textContent = ".....";
+      } else {
+        telephone.textContent = data.Telephone;
+      }
+
+      if (data.Address === undefined) {
+        address.textContent = ".....";
+      } else {
+        address.textContent = data.Address;
+      }
+
       username.textContent = data.Username;
-      fullname.textContent = data.Fullname;
+
       email.textContent = data.Email;
-      telephone.textContent = data.Telephone;
-      address.textContent = data.Address;
 
       modalClose.onclick = function() {
         hideModal();
