@@ -580,17 +580,18 @@ header {
           background-color: rgba(255, 255, 255, 0.8);
           height: 50vh;
           width: 30vw;
+
           border-radius: 5px;
           display: grid;
           padding: 20px;
-          grid-template: 1fr auto auto 2fr / auto;
+          grid-template: auto auto auto auto / auto;
           img {
             padding: 20px 0;
             width: 100px;
             justify-self: center;
           }
           .pointsSlide-img {
-            width: 250px;
+            width: 200px;
           }
           //slide div h2 general style
           h2 {
@@ -607,11 +608,9 @@ header {
             font-weight: 100;
             font-size: $font-subtitle;
             width: 60%;
-            background-color: $color-orange;
             align-items: center;
             justify-self: center;
             padding: 15px;
-            border-radius: 5px;
             span {
               border: none;
               padding: 0;
@@ -629,7 +628,7 @@ header {
             font-size: $font-size-text;
             font-weight: 600;
             line-height: 1.5;
-            width: 70%;
+            width: 100%;
             padding: 10px;
           }
 
