@@ -281,9 +281,7 @@ th:nth-child(5) {
 .modalContent {
   margin: 12% auto;
   padding: 20px;
-  width: fit-content;
-  min-width: 45vw;
-  max-width: 90vw;
+  width: 50vw;
   height: fit-content;
   /*padding: 0 0 3vw 0;*/
   background-color: #605757;
